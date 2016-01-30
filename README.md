@@ -4,7 +4,16 @@
   - ES6
   - React ^0.14.6
   - Webpack
-  - Webpack dev server
-  - React hot loader
+  - Webpack dev middleware
+  - Webpack hot middleware 
   - Eslint
+```
+
+clone this repo 
+
+
+and for the dev mode
+```
+npm start
+
 ```
