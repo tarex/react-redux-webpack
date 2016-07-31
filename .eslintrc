@@ -7,6 +7,7 @@
   },
   "rules": {
     "react/no-multi-comp": 0,
+    "react/jsx-boolean-value": 0,
     "import/default": 0,
     "import/no-duplicates": 0,
     "import/named": 0,
