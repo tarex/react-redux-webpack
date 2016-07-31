@@ -1,10 +1,10 @@
-var path = require('path');
-var webpack = require('webpack');
+import path from 'path';
+import webpack from 'webpack';
 
-module.exports = {
+const config = {
   devtool: 'source-map',
   entry: [
-    './assets/src/js/app.js',
+    './assets/src/js/index.js',
   ],
   output: {
     path: path.join(__dirname, 'assets/dist/js/'),
@@ -36,3 +36,4 @@ module.exports = {
     }),
   ],
 };
+export default config;

@@ -1,2 +1,2 @@
 require('babel-register');
-require('./devServer.js');
+require('./client/client.dev.js');
