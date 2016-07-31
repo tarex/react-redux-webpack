@@ -5,7 +5,7 @@ const documentRoot = document.getElementById('root');
 class App extends Component {
   render() {
     return (<div>
-      hello there, how are you?
+      hello there, how are you? i'm fine
     </div>);
   }
 }
