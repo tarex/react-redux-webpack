@@ -24,5 +24,5 @@
 clone this repo & start as development mode
 
 ```
-npm start
+npm i && npm start
 ```
