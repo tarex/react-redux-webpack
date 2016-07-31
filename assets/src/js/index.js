@@ -3,11 +3,11 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { DevTools } from 'components';
 import Router from './router';
-import configureStore from './store';
-const store = configureStore();
+import Store from './store';
+
 const documentRoot = document.getElementById('root');
 render(
-  <Provider store={store}>
+  <Provider store={Store}>
     <div>
       <DevTools />
       <Router />

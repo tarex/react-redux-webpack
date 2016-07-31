@@ -10,6 +10,4 @@ const createStoreWithMiddleware = compose(
   DevTools.instrument(), // need to change for production mode
 )(createStore);
 
-export default function configureStore() {
-  return createStoreWithMiddleware(reducer);
-}
+export default createStoreWithMiddleware(reducer);
