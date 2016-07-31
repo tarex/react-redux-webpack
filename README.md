@@ -1,5 +1,17 @@
 #React Webpack starter 
 
+### Installation 
+clone this repo & start as development mode
+
+```
+npm i && npm start
+```
+
+To hide redux devtool press `ctrl + H`
+
+
+# Used 
+
 ```
   - ES6
   - React
@@ -20,9 +32,3 @@
 - Auth0 implementation
 
 
-
-clone this repo & start as development mode
-
-```
-npm i && npm start
-```
