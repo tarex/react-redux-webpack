@@ -10,25 +10,25 @@ npm i && npm start
 To hide redux devtool press `ctrl + H`
 
 
-# Used 
-
+### Library used
 ```
-  - ES6
-  - React
-  - Redux
-  - Webpack
-  - Webpack dev middleware
-  - Webpack hot middleware 
-  - Eslint
-  - Babel
+- ES6
+- React
+- Redux
+- Webpack
+- Webpack dev middleware
+- Webpack hot middleware 
+- Eslint
+- Babel
 ```
 
 
-# Todo 
+### Todo 
+```
 - Dev & production mode setup
 - Test suite
 - React-router
 - Implement redux-saga
 - Auth0 implementation
-
+```
 
