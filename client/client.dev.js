@@ -22,5 +22,6 @@ app.listen(DEV_PORT, 'localhost', (err) => {
     console.log(err);
     return;
   }
+  console.log(__dirname);
   console.log(`Listening at http://localhost:${DEV_PORT}`);
 });

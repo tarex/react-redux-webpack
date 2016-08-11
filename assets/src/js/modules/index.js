@@ -1,18 +1,11 @@
-const initialState = {
-  loading: false,
-};
+import counter from './counter';
+import auth from './auth';
 
-function initial(state = initialState, action) {
-  switch (action.type) {
-    case 'FIRST': {
-      return { ...state, loading: !state.loading };
-    }
-    default: {
-      return state;
-    }
-  }
-}
-
+// reducer. action.type 
 export {
-  initial,
+  auth,
+  counter
 };
+
+
+
