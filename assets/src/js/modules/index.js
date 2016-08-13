@@ -1,10 +1,9 @@
 import counter from './counter';
-import auth from './auth';
-
+import todo from './todo';
 // reducer. action.type 
 export {
-  auth,
-  counter
+  counter,
+  todo
 };
 
 

@@ -1,27 +1,59 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { hellothere } from 'modules/auth';
-import { ShowLoading, Toggle } from 'components';
-
-// // console.log(ShowLoading);
-
+import AddForm from './containers/form/addform';
+import SingleItem from './containers/form/single';
 class Router extends Component {
   constructor(props) {
     super(props);
   }
-  handleChange(e) {
-  	e.preventDefault();
-  	this.props.changeSomething();
-  }
   render() {
-    const { loading } = this.props;
+    const showItem = (item) => {
+      return (<SingleItem item = {item} ToggleEdit={this.props.ToggleEdit} DeleteItem={this.props.DeleteItem} EditItem={this.props.EditItem}/>);
+    }
     return (<div>
-      <ShowLoading name={loading} />
-      <Toggle press={this.props.hellothere} />
+      <AddForm add = {this.props.AddItem}/>
+      <ul>
+        {this.props.item.map(showItem)}
+      </ul>
     </div>);
   }
 }
 
+function AddItem(data) {
+  let convertedData = {};
+  convertedData.data = data;
+  convertedData.uid= new Date().getTime();
+  convertedData.open = false;
+  return ({
+      type: 'AddItem',
+      data: convertedData}
+    );
+}
+
+function DeleteItem (id) {
+    return ({
+      type: 'DeleteItem',
+      id: id
+    });
+}
+
+function ToggleEdit (id) {
+  return ({
+    type: 'ToggleItem',
+    id: id,
+  })
+}
+
+function EditItem (id, value) {
+  console.log(id);
+  console.log(value);
+  return ({
+    type: 'EditItem',
+    data: value,
+    id: id,
+  })
+}
+
 export default connect(state => ({
-	loading: state.auth.loading,
-}), { hellothere })(Router);
+	item: state.todo.allItem,
+}), { AddItem , DeleteItem, ToggleEdit, EditItem })(Router);
