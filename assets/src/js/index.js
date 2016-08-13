@@ -6,6 +6,7 @@ import Router from './router';
 import Store from './store';
 
 const documentRoot = document.getElementById('root');
+
 render(
   <Provider store={Store}>
     <div>
