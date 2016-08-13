@@ -45,8 +45,6 @@ function ToggleEdit (id) {
 }
 
 function EditItem (id, value) {
-  console.log(id);
-  console.log(value);
   return ({
     type: 'EditItem',
     data: value,
