@@ -1,5 +1,3 @@
-import Menu from './menu';
-
 const initialState = {
   loading: true,
 };
@@ -19,5 +17,4 @@ function initial(state = initialState, action) {
 
 export {
   initial,
-  Menu,
 };

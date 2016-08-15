@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { App } from 'containers';
 
 class Router extends Component {
   constructor(props) {
@@ -7,7 +6,7 @@ class Router extends Component {
   }
   render() {
     return (<div>
-      <App />
+      yo, start from here!
     </div>);
   }
 }
