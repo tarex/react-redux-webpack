@@ -1,12 +1,16 @@
+import Menu from './menu';
+
 const initialState = {
-  loading: false,
+  loading: true,
 };
 
 function initial(state = initialState, action) {
   switch (action.type) {
-    case 'FIRST': {
-      return { ...state, loading: !state.loading };
-    }
+    case 'CHANGE':
+      return {
+        ...state,
+        loading: !state.loading
+      };
     default: {
       return state;
     }
@@ -15,4 +19,5 @@ function initial(state = initialState, action) {
 
 export {
   initial,
+  Menu,
 };

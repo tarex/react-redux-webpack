@@ -6,6 +6,7 @@
     "mocha": true
   },
   "rules": {
+    "react/prop-types": 0,
     "react/no-multi-comp": 0,
     "react/jsx-boolean-value": 0,
     "import/default": 0,
