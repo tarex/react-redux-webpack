@@ -22,13 +22,3 @@ To hide redux devtool press `ctrl + H`
 - Babel
 ```
 
-
-### Todo 
-```
-- Dev & production mode setup
-- Test suite
-- React-router
-- Implement redux-saga
-- Auth0 implementation
-```
-
