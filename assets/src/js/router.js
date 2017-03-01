@@ -37,6 +37,9 @@ class Router extends Component {
     super(props);
     this.changestate = this.changestate.bind(this);
     this.state = {
+      isLoading: true,
+      spinner: document.querySelector('.loader'),
+      container: document.querySelector('.root'),
       ComponentName: 'TestGraph',
       components: ['SortableSimple', 'SortableComponent', 'ReactMotion', 'ModalMotion',
       'keenOutput', 'ReactMotionMenu', 'TestGraph'],
@@ -49,7 +52,14 @@ class Router extends Component {
   }
   render() {
     let ComponentName = 'ModalMotion';
-    const { components } = this.state;
+    const { components, isLoading, spinner, container } = this.state;
+    console.log(this.state);
+    if (isLoading) {
+      console.log('load', spinner, container);
+      //spinner.setAttribute('hidden', true);
+      container.removeAttribute('hidden');
+      this.setState({ isLoading: false });
+    }
     switch (this.state.ComponentName) {
       case components[0]:
         ComponentName = SortableSimple;

@@ -4,12 +4,13 @@ import JSONTree from 'react-json-tree';
 const Graph = require('graphlib').Graph;
 const graph = new Graph({ multigraph: true });
 const number = 2000;
+const showItem = 20000;
 const options = [
   ['clothing', 'music', 'travels', 'tshirt', 'hoody', 'song', 'artist', 'album'],
   ['red', 'blue', 'green'],
 ];
 const sortingList = ['name+', 'name-', 'id+', 'id-', 'price+', 'price-', 'date+', 'date-'];// let outPut = [];
-
+import TestGraphFaysalVy from './TestGraphFaysal';
 // function addOutput(e, line) {
 //   if (e) {
 //     console.log(e);
@@ -183,18 +184,25 @@ export default class TestGraph extends Component {
     });
   }
   getSelectedPosts(showNumber) {
-    let posts = this.getPosts(this.getSelectedNodes('roottex', ['roottex']));
+    let posts = [];
     const opts = ['roottex', 'color'];
+    let changed = false;
     this.state.selectedTex.forEach((selectedTex, index) => {
       if (selectedTex.length > 0) {
         const posts2 = this.getPosts(this.getSelectedNodes(opts[index], clone(selectedTex)));
-        if (posts.length > posts2.length) {
+        if (!changed) {
+          posts = posts2;
+          changed = true;
+        } else if (posts.length > posts2.length) {
           posts = this.andOperation(posts2, posts);
         } else {
           posts = this.andOperation(posts, posts2);
         }
       }
     });
+    if (!changed) {
+      posts = this.getPosts(this.getSelectedNodes('roottex', ['roottex']));
+    }
     return this.getSort(posts, this.state.sorting, showNumber);
   }
   createGraph() {
@@ -213,7 +221,7 @@ export default class TestGraph extends Component {
     return newPoests;
   }
   render() {
-    const data = this.getSelectedPosts(10);
+    const data = this.getSelectedPosts(showItem);
     const createOptions = () => {
       const selectedTex = this.state.selectedTex;
       const optionItems = [];
@@ -250,6 +258,8 @@ export default class TestGraph extends Component {
       })}</div>);
     };
     return (<div >
+      Faisal Vai
+      <TestGraphFaysalVy />
       {createOptions()}
       {createSorting()}
       {data.length}
